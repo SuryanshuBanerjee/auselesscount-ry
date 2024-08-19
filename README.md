@@ -25,10 +25,6 @@ Click, I guess. It'll give you a target. Spam clicks on the needed button. The d
 - **CSS**
 - **JavaScript**
 
-## Getting Started
+## I want to waste my time!
 
-To get a local copy of the project up and running,
-Clone the respository: git clone https://github.com/SuryanshuBanerjee/auselesscount-ry.git
-Navigate to the project directory and open index.html in your web browser.
-
-Project under MIT License.
+https://suryanshubanerjee.github.io/auselesscount-ry/
