@@ -11,7 +11,7 @@ const statusDisplay = document.getElementById('status');
 
 let count = 0;
 let targetCount = 10;
-let timeLeft = 30;
+let timeLeft = 30; 
 let gameInterval;
 let timerInterval;
 let isPositiveTarget = true;
@@ -20,8 +20,13 @@ let gameNumber = 0;
 function updateDisplay() {
     labelcount.textContent = count;
     targetDisplay.textContent = `Target: ${isPositiveTarget ? targetCount : -targetCount}`;
-    // Ensure timeLeft is non-negative
-    timerDisplay.textContent = `Time: ${Math.max(0, Math.floor(timeLeft / 60)).toString().padStart(2, '0')}:${Math.max(0, (timeLeft % 60)).toString().padStart(2, '0')}`;
+    
+    
+    const minutes = Math.floor(timeLeft / 60);
+    const seconds = timeLeft % 60;
+    
+    
+    timerDisplay.textContent = `Time: ${Math.max(0, minutes).toString().padStart(2, '0')}:${Math.max(0, seconds).toString().padStart(2, '0')}`;
 }
 
 function startGame() {
@@ -38,7 +43,7 @@ function startGame() {
     if (timerInterval) clearInterval(timerInterval);
 
     timerInterval = setInterval(() => {
-        timeLeft--;
+        timeLeft = Math.max(0, timeLeft - 1); // Ensure timeLeft doesn’t go negative
         updateDisplay();
         if (timeLeft <= 0) {
             clearInterval(timerInterval);
