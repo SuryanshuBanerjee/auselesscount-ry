@@ -28,7 +28,7 @@ Click, I guess. It'll give you a target. Spam clicks on the needed button. The d
 ## Getting Started
 
 To get a local copy of the project up and running,
-Clone the respository: git clone https://github.com/yourusername/count-challenge-game.git
+Clone the respository: git clone https://github.com/SuryanshuBanerjee/auselesscount-ry.git
 Navigate to the project directory and open index.html in your web browser.
 
 Project under MIT License.
