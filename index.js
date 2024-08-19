@@ -1,5 +1,5 @@
-console.log('A Suryanshu Banerjee Production 💙')
-console.log("Hi Rumi")
+console.log('A Suryanshu Banerjee Production 💙');
+console.log("Hi Rumi");
 
 const decrasebutton = document.getElementById('decrasebutton');
 const increasebutton = document.getElementById('increasebutton');
@@ -20,12 +20,13 @@ let gameNumber = 0;
 function updateDisplay() {
     labelcount.textContent = count;
     targetDisplay.textContent = `Target: ${isPositiveTarget ? targetCount : -targetCount}`;
-    timerDisplay.textContent = `Time: ${Math.floor(timeLeft / 60).toString().padStart(2, '0')}:${(timeLeft % 60).toString().padStart(2, '0')}`;
+    // Ensure timeLeft is non-negative
+    timerDisplay.textContent = `Time: ${Math.max(0, Math.floor(timeLeft / 60)).toString().padStart(2, '0')}:${Math.max(0, (timeLeft % 60)).toString().padStart(2, '0')}`;
 }
 
 function startGame() {
     targetCount = Math.floor(10 * Math.pow(1.5, gameNumber));
-    timeLeft = Math.max(10, 30 * Math.pow(0.7, gameNumber));
+    timeLeft = Math.floor(Math.max(10, 30 * Math.pow(0.7, gameNumber)));
     isPositiveTarget = !isPositiveTarget;
 
     gameNumber++;
